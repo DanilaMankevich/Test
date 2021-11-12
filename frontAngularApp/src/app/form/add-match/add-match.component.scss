@@ -1,0 +1,14 @@
+.form-wrapper{
+    display: flex;
+    justify-content: center;
+}
+.ng-select.custom {
+    border:0px;
+    min-height: 0px;
+    border-radius: 0px;
+    background-color: black;
+}
+.ng-select.custom .ng-select-container  {            
+    min-height: 0px;
+    border-radius: 0;
+}
