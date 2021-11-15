@@ -15,7 +15,6 @@ const routes: Routes = [
   { path: 'admin/match', component: AddMatchComponent },
   { path: '**', component: HomeComponent },
 ];
-//hello
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
