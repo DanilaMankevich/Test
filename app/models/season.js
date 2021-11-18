@@ -10,15 +10,15 @@ const SeasonSchema = mongoose.Schema({
 
 const Season = module.exports = mongoose.model('Season', SeasonSchema)
 
-module.exports.getSeasonByName = (name, callback) => {
-    const query = { name: name }
-    Season.findOne(query, callback)
+module.exports.getSeasonByName = (name) => {
+    const query = {name: name}
+    Season.findOne(query)
 }
 
-module.exports.getSeasonById = (id, callback) => {
-    Season.findOne(id, callback)
+module.exports.getSeasonById = (id) => {
+    Season.findOne(id)
 }
 
-module.exports.addSeason = (newSeason, callback) => {
-    newSeason.save(callback)
+module.exports.addSeason = (newSeason) => {
+    newSeason.save()
 }

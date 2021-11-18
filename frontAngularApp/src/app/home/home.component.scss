@@ -1,56 +1,60 @@
-.wrapper{
-    background-color: #000;
-    height: 15vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.wrapper {
+  background-color: #000;
+  height: 15vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
- .wrapper-matches{
-     display:flex;
-     justify-content: center;
-    flex-direction: column;
-    align-items: center; 
- }
-.match-component{
-    display: flex;
-    width: 700px;
-    background-color: #f4f4f4;
-    color: #989898;
-    border: 1px solid #989898;
-    flex-direction: column;
-    font-family: Roboto,Roboto,sans-serif!important;
-    font-size: 12px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.box-date-season{
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #989898;
+.wrapper-matches {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.match-information{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 50px;
-    border-bottom: 1px solid #989898;
-    border-collapse: collapse ;
-    
+.match-component {
+  display: flex;
+  width: 700px;
+  background-color: #f4f4f4;
+  color: #989898;
+  border: 1px solid #989898;
+  flex-direction: column;
+  font-family: Roboto, Roboto, sans-serif !important;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.box-date-season {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #989898;
+}
+
+.match-information {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  border-bottom: 1px solid #989898;
+  border-collapse: collapse;
+
 }
 
 .match-information:nth-last-child(1) {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .scores {
-    display: flex;
+  display: flex;
 }
+
 .box-information {
-    padding: 5px 10px;
+  padding: 5px 10px;
 }
-.span{
-    padding-left: 5px;
-    padding-right: 5px;
+
+.span {
+  padding-left: 5px;
+  padding-right: 5px;
 }

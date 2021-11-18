@@ -5,13 +5,14 @@ export interface IMatch {
   scoreAwayTeam?: Number;
   date: Date;
 }
+
 export interface ICompetition {
-    name: string,
-    seasons?: ISeason[]
+  name: string,
+  seasons?: ISeason[]
 }
 
 export interface ISeason {
-    name: string,
-    matches?: IMatch[]
+  name: string,
+  matches?: IMatch[]
 }
 

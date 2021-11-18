@@ -32,15 +32,15 @@ const MatchSchema = mongoose.Schema({
 
 const Match = module.exports = mongoose.model('Match', MatchSchema)
 
-module.exports.getMatchByName = (name, callback)=>{
+module.exports.getMatchByName = (name) => {
     const query = {name: name}
-    Match.findOne(query, callback)
+    Match.findOne(query)
 }
 
-module.exports.getMatchById = (id, callback)=>{
-    Match.findOne(id, callback)
+module.exports.getMatchById = (id) => {
+    Match.findOne(id)
 }
 
-module.exports.addMatch = (newMatch, callback)=>{
-    newMatch.save(callback)
+module.exports.addMatch = (newMatch) => {
+    newMatch.save()
 }

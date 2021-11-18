@@ -10,15 +10,15 @@ const CompetitionSchema = mongoose.Schema({
 
 const Competition = module.exports = mongoose.model('Competition', CompetitionSchema)
 
-module.exports.getCompetitionByName = function(name, callback){
+module.exports.getCompetitionByName = (name) => {
     const query = {name: name}
-    Competition.findOne(query, callback)
+    Competition.findOne(query)
 }
 
-module.exports.getCompetitionById = function(id, callback){
-    Competition.findOne(id, callback)
+module.exports.getCompetitionById = (id) => {
+    Competition.findOne(id)
 }
 
-module.exports.addCompetitionToMongo = function(newCompetition, callback){
-    newCompetition.save(callback)
+module.exports.addCompetitionToMongo = (newCompetition) => {
+    newCompetition.save()
 }

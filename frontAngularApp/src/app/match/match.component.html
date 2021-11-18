@@ -1,30 +1,28 @@
-  
-
 <div class="match-component" *ngFor="let match of newMatches  | paginate: {itemsPerPage:5, currentPage:p}">
-   
-    <div class="box-date-season">
-        <div class="box-information">
-           {{match.date | date}}
-        </div>
-        <div class="box-information" >
-            
-        </div>
+
+  <div class="box-date-season">
+    <div class="box-information">
+      {{match.date | date}}
+    </div>
+    <div class="box-information">
+
+    </div>
+  </div>
+
+  <div class="match-information">
+    <div>{{match.homeTeamName}}</div>
+    <div class="scores">
+      <div>{{match.scoreHomeTeam
+        }}</div>
+      <span class="span">-</span>
+      <div>{{match.scoreAwayTeam
+        }}</div>
     </div>
 
-    <div class="match-information">
-        <div>{{match.homeTeamName}}</div>
-        <div class="scores">
-            <div>{{match.scoreHomeTeam
-            }}</div>
-            <span class="span">-</span>
-            <div>{{match.scoreAwayTeam
-            }}</div>
-        </div>
+    <div>{{match.awayTeamName}}</div>
+  </div>
 
-        <div>{{match.awayTeamName}}</div>
-    </div>
-    
 </div>
 <div>
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

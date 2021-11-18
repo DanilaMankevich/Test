@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { CheckFormService } from '../../check-form.service';
-import { SendFormService } from 'src/app/send-form.service';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {CheckFormService} from '../../check-form.service';
+import {SendFormService} from 'src/app/send-form.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-season',
@@ -10,30 +10,25 @@ import { Router } from '@angular/router';
 })
 export class AddSeasonComponent implements OnInit {
 
-  seasonName: String
+  seasonName: string
 
-  constructor(private checkForm: CheckFormService, private sendFormService: SendFormService, private router: Router) { }
+  constructor(private checkForm: CheckFormService, private sendFormService: SendFormService, private router: Router) {
+  }
 
   ngOnInit(): void {
   }
-  SeasonAddClick() {
+
+  SeasonAdd() {
     const season = {
       seasonName: this.seasonName
     }
-    if (!this.checkForm.checkSeasonName(season.seasonName)) {
+    if (!this.checkForm.checkValue(season.seasonName)) {
       console.log('enter season name')
-      return false
+      return
     }
 
-    this.sendFormService.addSeason(season).subscribe((data:any) => {
-      console.log(data)
-      if(!data.success){
-        console.log('!!!не получилось' )
-      } else {
-        console.log('season add')
-        this.router.navigate(['/'])
-      }
-    })
-    
+    this.sendFormService.addSeason(season).subscribe();
+    return this.router.navigate(['/'])
+
   }
 }

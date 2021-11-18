@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 
 @Injectable({
@@ -8,53 +8,17 @@ import { Injectable } from '@angular/core';
 
 export class CheckFormService {
 
-  constructor() { 
-    
+  constructor() {
+
   }
 
-  checkCompetition(competitionName: String){
-    if(competitionName == undefined)
-      return false
-    else
-      return true  
-  }
-  checkMatchName1(team1: String){
-    if(team1 == undefined)
-      return false
-    else
-      return true  
-  }
-  checkMatchName2(team2: String){
-    if(team2 == undefined)
-      return false
-    else
-      return true  
+  checkValue(value: string | number){
+    return !!value
   }
 
-  checkScoreName1(score1: Number){
-    if(score1 == undefined)
-      return false
-    else
-      return true  
+  checkDate(date: Date) {
+    return !!date
   }
-  checkScoreName2(score2: Number){
-    if(score2 == undefined)
-      return false
-    else
-      return true  
-  }
-  checkDate(date: Date){
-    if(date == undefined)
-      return false
-    else
-      return true  
-  }
-  
-  checkSeasonName(seasonName:String){
-    if(seasonName == undefined)
-      return false
-    else
-      return true 
-  }
-  
+
+
 }

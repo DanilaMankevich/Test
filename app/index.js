@@ -16,24 +16,23 @@ app.use(cors());
 app.use("/admin", page);
 
 
-
 app.get("/", (req, res) => {
-  res.send("main page");
+    res.send("main page");
 });
 
 const startServer = async () => {
-  try {
-    await mongoose.connect(
-      `${config.mongo_url}:${config.mongo_port}/${config.mongo_db}`,
-      { useNewUrlParser: true, useUnifiedTopology: true }
-    );
-    console.log("successful connection to db");
-    app.listen(config.port, () => {
-      console.log("Server is running on port " + config.port);
-    });
-  } catch (error) {
-    console.log('error' + error);
-  }
+    try {
+        await mongoose.connect(
+            `${config.mongo_url}:${config.mongo_port}/${config.mongo_db}`,
+            {useNewUrlParser: true, useUnifiedTopology: true}
+        );
+        console.log("successful connection to db");
+        app.listen(config.port, () => {
+            console.log("Server is running on port " + config.port);
+        });
+    } catch (error) {
+        console.log('error' + error);
+    }
 };
 
 startServer();

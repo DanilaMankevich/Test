@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { IMatch } from '../types';
+import {Component, Input, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {IMatch} from '../types';
 
 @Component({
   selector: 'app-match',
@@ -14,9 +14,9 @@ export class MatchComponent implements OnInit {
   p: number = 1;
   filterBy: string;
 
-  constructor(public http: HttpClient) {}
- 
-  
+  constructor(public http: HttpClient) {
+  }
+
 
   ngOnInit(): void {
     this.http

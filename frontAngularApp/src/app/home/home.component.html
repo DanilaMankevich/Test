@@ -1,21 +1,21 @@
 <div class="wrapper">
-    
-        <div class="sel">
-            <ng-select (change)="onChangeCompetition($event)" [(ngModel)]="selectedCompetition" [items]="competitions"
-                bindLabel="name" bindValue="id" placeholder='chose competition' (click)='filterBy="selectedcomp"'
-                name='selectCompetition'>
-                <ng-option *ngFor="let competition of competitions" [value]="competition.id">{{competition.name}}
-                </ng-option>
-            </ng-select>
-        </div>
-        <div class="sel">
-            <ng-select (change)="onChangeSeason($event)" [(ngModel)]="selectedSeason" [items]="seasons" bindLabel="name"
-                bindValue="id" placeholder='chose season' name='selectSeason'>
-                <ng-option *ngFor="let season of seasons" [value]="season.id">{{season.name}}</ng-option>
-            </ng-select>
-        </div>
-    
+
+  <div class="sel">
+    <ng-select (change)="onChangeCompetition($event)" [(ngModel)]="selectedCompetition" [items]="competitions"
+               bindLabel="name" bindValue="id" placeholder='chose competition' (click)='filterBy="selectedcomp"'
+               name='selectCompetition'>
+      <ng-option *ngFor="let competition of competitions" [value]="competition.id">{{competition.name}}
+      </ng-option>
+    </ng-select>
+  </div>
+  <div class="sel">
+    <ng-select (change)="onChangeSeason($event)" [(ngModel)]="selectedSeason" [items]="seasons" bindLabel="name"
+               bindValue="id" placeholder='chose season' name='selectSeason'>
+      <ng-option *ngFor="let season of seasons" [value]="season.id">{{season.name}}</ng-option>
+    </ng-select>
+  </div>
+
 </div>
 <div class="wrapper-matches">
-    <app-match newMatches></app-match>
+  <app-match newMatches></app-match>
 </div>

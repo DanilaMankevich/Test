@@ -1,7 +1,7 @@
 <button ibmButton="secondary" routerLink='/admin'>Назад</button>
 <div class="form-wrapper">
-    <form (submit)="SeasonAddClick()">
-        <input ibmText type="text" size="xl" [(ngModel)]="seasonName" name="season" placeholder="Enter season">
-        <button ibmButton="secondary" type="submit">Add</button>
-    </form>
+  <form (submit)="SeasonAdd()">
+    <input ibmText type="text" size="xl" [(ngModel)]="seasonName" name="season" placeholder="Enter season">
+    <button ibmButton="secondary" type="submit">Add</button>
+  </form>
 </div>
