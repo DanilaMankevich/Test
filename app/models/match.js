@@ -30,17 +30,13 @@ const MatchSchema = mongoose.Schema({
     }
 })
 
-const Match = module.exports = mongoose.model('Match', MatchSchema)
+const Match = (module.exports = mongoose.model(
+    'Match',
+    MatchSchema
+));
 
-module.exports.getMatchByName = (name) => {
-    const query = {name: name}
-    Match.findOne(query)
-}
+module.exports.getMatchByName = (name) => Match.findOne({name});
 
-module.exports.getMatchById = (id) => {
-    Match.findOne(id)
-}
+module.exports.getMatchById = (id) => Match.findOne(id);
 
-module.exports.addMatch = (newMatch) => {
-    newMatch.save()
-}
+module.exports.addMatch = (newMatch) => newMatch.save();

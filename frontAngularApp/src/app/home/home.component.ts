@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   matches: IMatch[];
   newMatches: IMatch[] = [];
   filterBy: string = 'normal';
-  queryParams: { competitionId: string; seasonId: string };
+  filter: { competitionId: string; seasonId: string };
   constructor(
     public http: HttpClient,
     public route: ActivatedRoute,
@@ -26,58 +26,52 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.http.get('http://localhost:3000/admin/seasons/').subscribe((data:any): any => {
-      this.seasons = data;
+    this.http.get('http://localhost:3000/admin/seasons/').subscribe((seasons:any): any => {
+      this.seasons = seasons;
     });
     this.http
       .get('http://localhost:3000/admin/competitions/')
-      .subscribe((data:any): any => {
-        this.competitions = data;
+      .subscribe((competitions:any): any => {
+        this.competitions = competitions;
       });
-    this.http.get('http://localhost:3000/admin/matches/').subscribe((data:any): any => {
+    this.http.get('http://localhost:3000/admin/matches/').subscribe((matches:any): any => {
       //this.matches = data;
       //console.log(this.matches);
     });
-    this.route.queryParams.subscribe((data: any): any => {
-      this.competitionId = data.competitionId,
-      this.queryParams = data,
-      this.seasonId = data.seasonId;
-      console.log(this.queryParams);
+    this.route.queryParams.subscribe((params: any): any => {
+      //this.competitionId = params.competitionId;
+      this.filter = params;
+      //this.seasonId = params.seasonId;
+      console.log(this.filter);
     });
-
-
   }
 
-  onChangeCompetition = ($event: any): void => {
-    this.competitionId = $event._id;
+  onChangeCompetition = (competitionEvent: any): void => {
+    const compId = competitionEvent._id;
     this.http
       .get(
-        `http://localhost:3000/admin/?competition=${this.competitionId}`
+        `http://localhost:3000/admin/?competitionId=${compId}`
       )
       .subscribe((data: any) => {
         console.log(data);
         data.map((matches: any) => {
           this.newMatches.push(matches);
         });
-        this.queryParams.competitionId = this.competitionId
+        this.filter = { ...this.filter, competitionId: compId}
         this.navigateWithQueryParams()
       });
-
     // let newMatches = this.matches.filter((match: { competitionId: string; })=>{
-
     //   return match.competitionId == this.competitionId
-
     // })
-
     //console.log(this.newMatches)
   };
 
-  onChangeSeason = ($event: any): void => {
-    this.seasonId = $event._id;
-    
+  onChangeSeason = (seasonEvent: any): void => {
+    const seasId = seasonEvent._id;
+
     this.http
       .get(
-        `http://localhost:3000/admin/?competition=${this.competitionId}&season=${this.seasonId}`
+        `http://localhost:3000/admin/?competitionId=${this.competitionId}&seasonId=${seasId}`
       )
       .subscribe((data: any) => {
         console.log(data);
@@ -95,7 +89,8 @@ export class HomeComponent implements OnInit {
   };
   private navigateWithQueryParams(){
     this.router.navigate([''],{
-      queryParamsHandling: 'merge'
+      queryParamsHandling: 'merge',
+      queryParams: this.filter
     })
   }
 }
