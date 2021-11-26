@@ -109,15 +109,15 @@ router.get("/matches/:id", async (req, res) => {
 });
 
 router.get("/", async (req, res) => {
-  let a = req.query.competitionId;
-  let b = req.query.seasonId;
-  console.log(a, b);
-
-  await Match.find({ competitionId: a, seasonId: b }).exec((err, matches) => {
+  let competition = req.query.competitionId;
+  let season = req.query.seasonId;
+  await Match.find({ competitionId: competition, seasonId: season }).exec((err, matches) => {
     if (err) {
       console.log(err + "error retrieving competition");
     } else {
-      res.send(matches);
+      res.send(matches.sort(
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+      ));
     }
   });
 });

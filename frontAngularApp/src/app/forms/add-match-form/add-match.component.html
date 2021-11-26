@@ -1,0 +1,121 @@
+<div class="panel">
+  <h1 class="h1-style">Add match</h1>
+  <div class="form-wrapper">
+    <form (submit)="MatchAdd()">
+      <div class="elem-label">
+        <label>Enter 1st team name</label>
+      </div>
+      <div class="elem">
+        <input
+          ibmText
+          type="text"
+          size="xl"
+          [(ngModel)]="homeTeamName"
+          name="homeTeamName"
+          placeholder="Enter 1 team name"
+        />
+      </div>
+      <div class="elem-label">
+        <label>Enter 2nd team name</label>
+      </div>
+      <div class="elem">
+        <input
+          ibmText
+          type="text"
+          size="xl"
+          [(ngModel)]="awayTeamName"
+          name="awayTeamName"
+          placeholder="Enter 2 team name"
+        />
+      </div>
+      <div class="elem-label">
+        <label>Enter event date</label>
+      </div>
+      <div class="elem">
+        <input
+          ibmText
+          size="xl"
+          type="date"
+          [(ngModel)]="date"
+          name="date"
+          placeholder="Enter date"
+        />
+      </div>
+      <div class="elem-label">
+        <label>Enter score 1st team</label>
+      </div>
+      <div class="elem">
+        <input
+          ibmText
+          size="xl"
+          type="number"
+          [(ngModel)]="scoreHomeTeam"
+          name="scoreHomeTeam"
+          placeholder="Enter score 1st team"
+        />
+      </div>
+      <div class="elem-label">
+        <label>Enter score 2nd team</label>
+      </div>
+      <div class="elem">
+        <input
+          ibmText
+          size="xl"
+          type="number"
+          [(ngModel)]="scoreAwayTeam"
+          name="scoreAwayTeam"
+          placeholder="Enter score 2 team"
+        />
+      </div>
+      <div class="elem-label">
+        <label>Choose competition</label>
+      </div>
+      <div class="elem">
+        <ng-select
+          class="custom"
+          (change)="onChangeCompetition($event)"
+          [(ngModel)]="selectedCompetition"
+          [items]="competitions"
+          bindLabel="name"
+          bindValue="id"
+          placeholder="chose competition"
+          name="selectCompetition"
+        >
+          <ng-option
+            *ngFor="let competition of competitions"
+            [value]="competition.id"
+            >{{ competition.name }}</ng-option
+          >
+        </ng-select>
+      </div>
+
+      <div class="elem-label">
+        <label>Choose season</label>
+      </div>
+      <div class="elem">
+        <ng-select
+          class="custom"
+          (change)="onChangeSeason($event)"
+          [(ngModel)]="selectedSeason"
+          [items]="seasons"
+          bindLabel="name"
+          bindValue="id"
+          placeholder="chose season"
+          name="selectSeason"
+        >
+          <ng-option *ngFor="let season of seasons" [value]="season.id">{{
+            season.name
+          }}</ng-option>
+        </ng-select>
+      </div>
+      <div class="elem elem-buttons">
+        <div>
+          <button ibmButton="secondary" routerLink="/admin">Back</button>
+        </div>
+        <div>
+          <button ibmButton="secondary" type="submit">Add</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

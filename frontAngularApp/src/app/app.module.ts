@@ -1,23 +1,29 @@
-import {NgxPaginationModule} from 'ngx-pagination';
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
-import {NgSelectModule} from '@ng-select/ng-select';
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
-import {HeaderComponent} from './header/header.component';
-import {FooterComponent} from './footer/footer.component';
-import {HomeComponent} from './home/home.component';
-import {AdminComponent} from './admin/admin.component';
-import {AddMatchComponent} from './form/add-match/add-match.component';
-import {AddCompetitionComponent} from './form/add-competition/add-competition.component';
-import {AddSeasonComponent} from './form/add-season/add-season.component';
-import {CheckFormService} from './check-form.service';
-import {SendFormService} from './send-form.service';
-import {HttpClientModule} from '@angular/common/http';
-import {ButtonModule, InputModule, SelectModule} from 'carbon-components-angular';
-import {MatchComponent} from './match/match.component';
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './pages/header/header.component';
+import { FooterComponent } from './pages/footer/footer.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { AddMatchComponent } from './forms/add-match-form/add-match.component';
+import { AddCompetitionComponent } from './forms/add-competition-form/add-competition.component';
+import { AddSeasonComponent } from './forms/add-season-form/add-season.component';
+import { CheckFormService } from './services/check-form.service';
+import { SendFormService } from './services/send-form.service';
+import { HttpClientModule } from '@angular/common/http';
+import {
+  ButtonModule,
+  InputModule,
+  SelectModule,
+} from 'carbon-components-angular';
+import { MatchComponent } from './pages/match/match.component';
+import { AddCompetitionContainerComponent } from './forms/form-competition-controller/add-competition-container.component';
+import { AddSeasonContainerComponent } from './forms/form-season-controller/add-season-container.component';
+import { AddMatchContainerComponent } from './forms/form-match-controller/add-match-container.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +36,9 @@ import {MatchComponent} from './match/match.component';
     AddCompetitionComponent,
     AddSeasonComponent,
     MatchComponent,
-
+    AddCompetitionContainerComponent,
+    AddSeasonContainerComponent,
+    AddMatchContainerComponent,
   ],
   imports: [
     ButtonModule,
@@ -41,10 +49,9 @@ import {MatchComponent} from './match/match.component';
     NgSelectModule,
     NgxPaginationModule,
     InputModule,
-    SelectModule
+    SelectModule,
   ],
   providers: [CheckFormService, SendFormService],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}

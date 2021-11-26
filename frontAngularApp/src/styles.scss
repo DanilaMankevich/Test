@@ -3,22 +3,22 @@
 @import "~carbon-components/scss/globals/scss/styles.scss";
 
 * {
-    margin: 0;
-    padding: 0;
-}
-html, body{
-    height: 100%;
-
-font-family: Roboto,Roboto,sans-serif!important;
-    font-size: 14px;
-}
-.bx--btn bx--btn--secondary bx--btn--lg {
-  text-align: center !important;
-}
-.bx--btn--secondary {
-  text-align: center;
-}
-.button {
-  text-align: center !important;
+  margin: 0;
+  padding: 0;
 }
 
+html,
+body {
+  height: 100%;
+  font-family: Roboto, Roboto, sans-serif !important;
+  font-size: 14px;
+}
+h1,
+label {
+  color: #393939;
+}
+
+ng-select.custom > div {
+  outline: none !important;
+  box-shadow: none !important;
+}

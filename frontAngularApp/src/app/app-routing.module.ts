@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './admin/admin.component';
-import { HomeComponent } from './home/home.component';
-import { AddMatchComponent } from './form/add-match/add-match.component';
-import { AddCompetitionComponent } from './form/add-competition/add-competition.component';
-import { AddSeasonComponent } from './form/add-season/add-season.component';
-
+import { AdminComponent } from './pages/admin/admin.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AddCompetitionContainerComponent } from './forms/form-competition-controller/add-competition-container.component';
+import { AddSeasonContainerComponent } from './forms/form-season-controller/add-season-container.component';
+import { AddMatchContainerComponent } from './forms/form-match-controller/add-match-container.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'admin', component: AdminComponent },
-  { path: 'admin/competition', component: AddCompetitionComponent },
-  { path: 'admin/season', component: AddSeasonComponent },
-  { path: 'admin/match', component: AddMatchComponent },
+  { path: 'admin/competition', component: AddCompetitionContainerComponent },
+  { path: 'admin/season', component: AddSeasonContainerComponent },
+  { path: 'admin/match', component: AddMatchContainerComponent },
   { path: '**', component: HomeComponent },
 ];
 
