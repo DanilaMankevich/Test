@@ -16,8 +16,6 @@ export class AddMatchComponent implements OnInit {
   date: Date;
   competitions: any;
   seasons: any;
-  selectedCompetition: number;
-  selectedSeason: number;
   seasonId: any;
   competitionId: any;
   @Output() private addMatch = new EventEmitter<any>();
