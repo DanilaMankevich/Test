@@ -1,0 +1,14 @@
+<div class="match-component" *ngFor="let match of newMatches">
+  <div class="box-date-season">
+    <div class="box-information">
+      {{ match.date | date }}
+    </div>
+  </div>
+  <div class="match-information">
+    <div class="match-name">{{ match.homeTeamName }}</div>
+    <div class="scores">
+      <div>{{ match.scoreHomeTeam }} - {{ match.scoreAwayTeam }}</div>
+    </div>
+    <div class="match-name">{{ match.awayTeamName }}</div>
+  </div>
+</div>

@@ -22,3 +22,42 @@ ng-select.custom > div {
   outline: none !important;
   box-shadow: none !important;
 }
+
+a {
+  line-height: 16px;
+  text-align: center;
+  color: #000;
+  text-decoration: none;
+  &:hover{
+    color: #0662fe;
+  }
+}
+
+.panel {
+  margin: 5rem 1rem 5rem 5rem;
+  padding: 20px;
+  max-width: 500px;
+  background-color: white;
+  box-shadow: 0 0 10px 0 #afa6a8;
+  .form-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .elem {
+    margin: 1rem 0 1rem 0;
+  }
+  .elem-buttons {
+    display: flex;
+    margin-top: 2rem;
+  }
+  .bx--btn {
+    padding: 0 60px;
+    align-items: center;
+    margin: 0 1rem 0 1rem;
+  }
+  .h1-style {
+    margin-bottom: 13px;
+    margin-left: 16px;
+  }
+}
+

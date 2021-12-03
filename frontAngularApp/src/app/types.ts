@@ -1,7 +1,7 @@
 export interface IMatch {
   homeTeamName: string;
   awayTeamName: string;
-  scoreHomeTeam?: Number;
-  scoreAwayTeam?: Number;
+  scoreHomeTeam?: number;
+  scoreAwayTeam?: number;
   date: Date;
 }

@@ -1,0 +1,43 @@
+.match-component {
+  display: flex;
+  width: 60vh;
+  background-color: #f4f4f4;
+  color: #989898;
+  border: 1px solid #989898;
+  flex-direction: column;
+  font-family: Roboto, Roboto, sans-serif !important;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  .box-date-season {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #989898;
+    .box-information {
+      padding: 5px 10px;
+    }
+  }
+
+  .match-information {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    height: 50px;
+    border-bottom: 1px solid #989898;
+    border-collapse: collapse;
+    .scores {
+      flex: 1;
+      color: #d0021b !important;
+    }
+    .match-name{
+      flex: 1;
+      color: #393939;
+    }
+    &:nth-last-child(1) {
+      border-bottom: none;
+    }
+  }
+
+}

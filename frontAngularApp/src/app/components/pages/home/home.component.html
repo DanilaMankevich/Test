@@ -1,0 +1,27 @@
+<div class="home-wrapper">
+  <div class="sel-container">
+    <ng-select
+      class="custom"
+      (change)="onChangeCompetition($event)"
+      [items]="competitions"
+      bindLabel="name"
+      bindValue="id"
+      placeholder="choose competition"
+    >
+    </ng-select>
+  </div>
+  <div class="sel-container">
+    <ng-select
+      class="custom"
+      (change)="onChangeSeason($event)"
+      [items]="seasons"
+      bindLabel="name"
+      bindValue="id"
+      placeholder="chose season"
+    >
+    </ng-select>
+  </div>
+</div>
+<div class="wrapper-matches">
+  <app-match [newMatches]="newMatches"></app-match>
+</div>

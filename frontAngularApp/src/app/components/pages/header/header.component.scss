@@ -1,0 +1,23 @@
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .links {
+    display: flex;
+    padding-right: 15px;
+    .link {
+      padding-left: 15px;
+    }
+  }
+
+  .logo {
+    padding-left: 10px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+}
+
+

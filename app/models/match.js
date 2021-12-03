@@ -1,42 +1,36 @@
-const mongoose = require('mongoose')
-const config = require('../config/db')
+const mongoose = require("mongoose");
 
 const MatchSchema = mongoose.Schema({
-    homeTeamName: {
-        type: String,
-        required: true
-    },
-    awayTeamName: {
-        type: String,
-        required: true
-    },
-    date: {
-        type: Date,
-        required: true
-    },
-    scoreHomeTeam: {
-        type: Number
-    },
-    scoreAwayTeam: {
-        type: Number
-    },
-    competitionId: {
-        type: String,
-        required: true
-    },
-    seasonId: {
-        type: String,
-        required: true
-    }
-})
+  homeTeamName: {
+    type: String,
+    required: true,
+  },
+  awayTeamName: {
+    type: String,
+    required: true,
+  },
+  date: {
+    type: Date,
+    required: true,
+  },
+  scoreHomeTeam: {
+    type: Number,
+  },
+  scoreAwayTeam: {
+    type: Number,
+  },
+  competitionId: {
+    type: String,
+    required: true,
+  },
+  seasonId: {
+    type: String,
+    required: true,
+  },
+});
 
-const Match = (module.exports = mongoose.model(
-    'Match',
-    MatchSchema
-));
+const Match = mongoose.model('Match', MatchSchema)
 
-module.exports.getMatchByName = (name) => Match.findOne({name});
-
-module.exports.getMatchById = (id) => Match.findOne(id);
+module.exports = Match;
 
 module.exports.addMatch = (newMatch) => newMatch.save();

@@ -5,14 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './pages/header/header.component';
-import { FooterComponent } from './pages/footer/footer.component';
-import { HomeComponent } from './pages/home/home.component';
-import { AdminComponent } from './pages/admin/admin.component';
-import { AddMatchComponent } from './forms/add-match-form/add-match.component';
-import { AddCompetitionComponent } from './forms/add-competition-form/add-competition.component';
-import { AddSeasonComponent } from './forms/add-season-form/add-season.component';
-import { CheckFormService } from './services/check-form.service';
+import { HeaderComponent } from './components/pages/header/header.component';
+import { FooterComponent } from './components/pages/footer/footer.component';
+import { HomeComponent } from './components/pages/home/home.component';
+import { AdminComponent } from './components/pages/admin/admin.component';
+import { AddMatchComponent } from './components/forms/add-match-form/add-match.component';
+import { AddCompetitionComponent } from './components/forms/add-competition-form/add-competition.component';
+import { AddSeasonComponent } from './components/forms/add-season-form/add-season.component';
 import { SendFormService } from './services/send-form.service';
 import { HttpClientModule } from '@angular/common/http';
 import {
@@ -20,10 +19,10 @@ import {
   InputModule,
   SelectModule,
 } from 'carbon-components-angular';
-import { MatchComponent } from './pages/match/match.component';
-import { AddCompetitionContainerComponent } from './forms/form-competition-controller/add-competition-container.component';
-import { AddSeasonContainerComponent } from './forms/form-season-controller/add-season-container.component';
-import { AddMatchContainerComponent } from './forms/form-match-controller/add-match-container.component';
+import { MatchComponent } from './components/pages/match/match.component';
+import { AddCompetitionContainerComponent } from './components/pages/form-controllers/form-competition-controller/add-competition-container.component';
+import { AddSeasonContainerComponent } from './components/pages/form-controllers/form-season-controller/add-season-container.component';
+import { AddMatchContainerComponent } from './components/pages/form-controllers/form-match-controller/add-match-container.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +50,7 @@ import { AddMatchContainerComponent } from './forms/form-match-controller/add-ma
     InputModule,
     SelectModule,
   ],
-  providers: [CheckFormService, SendFormService],
+  providers: [ SendFormService ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

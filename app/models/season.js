@@ -1,20 +1,14 @@
-const mongoose = require('mongoose')
-const config = require('../config/db')
+const mongoose = require("mongoose");
 
 const SeasonSchema = mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    }
-})
+  name: {
+    type: String,
+    required: true,
+  },
+});
 
-const Season = (module.exports = mongoose.model(
-    'Season',
-    SeasonSchema
-));
-
-module.exports.getSeasonByName = (name) => Season.findOne({name});
-
-module.exports.getSeasonById = (id) => Season.findOne(id);
+const Season = mongoose.model("Season", SeasonSchema);
 
 module.exports.addSeason = (newSeason) => newSeason.save();
+
+module.exports = Season;

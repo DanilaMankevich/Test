@@ -1,20 +1,14 @@
-const mongoose = require('mongoose')
-const config = require('../config/db')
+const mongoose = require("mongoose");
 
 const CompetitionSchema = mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    }
-})
+  name: {
+    type: String,
+    required: true,
+  },
+});
 
-const Competition = (module.exports = mongoose.model(
-    'Competition',
-    CompetitionSchema
-));
+const Competition = mongoose.model('Competition', CompetitionSchema)
 
-module.exports.getCompetitionByName = (name) => Competition.findOne({name});
-
-module.exports.getCompetitionById = (id) => Competition.findOne(id);
+module.exports = Competition;
 
 module.exports.addCompetition = (newCompetition) => newCompetition.save();

@@ -5,7 +5,11 @@ const path = require("path");
 const config = require("./config/db");
 const app = express();
 const page = require("./routes/mainRoute");
+const competitions = require("./routes/competitions");
+const matches = require("./routes/matches");
+const seasons = require("./routes/seasons");
 const cors = require("cors");
+
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -13,6 +17,9 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use("/admin", page);
+app.use("/competitions", competitions);
+app.use("/seasons", seasons);
+app.use("/matches", matches);
 
 app.get("/", (req, res) => {
   res.send("main page");
