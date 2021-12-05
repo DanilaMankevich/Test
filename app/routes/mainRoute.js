@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
   await Match.find({ competitionId: competition, seasonId: season }).exec(
     (err, matches) => {
       if (err) {
-        res.status(500).json(err + "error retrieving competition");
+        res.status(500).json(err + "error");
       } else {
         res
           .status(200)
