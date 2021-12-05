@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IMatch } from '../../../types';
+import { IMatch } from '../../../models/types';
 
 @Component({
   selector: 'app-match',
