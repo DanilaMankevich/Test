@@ -13,7 +13,7 @@ export class SendFormService {
   addCompetition(competition: any) {
     return this.http.post(
       'http://localhost:3000/competitions/competition',
-      JSON.stringify(competition),
+      competition,
       this.headers
     );
   }
@@ -21,7 +21,7 @@ export class SendFormService {
   addSeason(season: any) {
     return this.http.post(
       'http://localhost:3000/seasons/season',
-      JSON.stringify(season),
+      season,
       this.headers
     );
   }
@@ -29,7 +29,7 @@ export class SendFormService {
   addMatch(match: any) {
     return this.http.post(
       'http://localhost:3000/matches/match',
-      JSON.stringify(match),
+      match,
       this.headers
     );
   }

@@ -12,7 +12,8 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "*",
-    "mongoose": "*"
+    "mongoose": "*",
+    "nodemon": "^2.0.15"
   },
   "author": "",
   "license": "ISC"

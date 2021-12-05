@@ -9,6 +9,6 @@ const SeasonSchema = mongoose.Schema({
 
 const Season = mongoose.model("Season", SeasonSchema);
 
-module.exports.addSeason = (newSeason) => newSeason.save();
-
 module.exports = Season;
+
+module.exports.addSeason = (newSeason) => newSeason.save();

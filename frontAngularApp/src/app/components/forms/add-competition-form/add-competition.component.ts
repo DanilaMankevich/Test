@@ -5,7 +5,6 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   templateUrl: './add-competition.component.html',
   styleUrls: ['./add-competition.component.scss'],
 })
-
 export class AddCompetitionComponent implements OnInit {
   @Output() private addCompetition = new EventEmitter<any>();
   competitionName: string;
